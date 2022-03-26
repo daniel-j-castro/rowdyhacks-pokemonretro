@@ -1,0 +1,15 @@
+html {
+    font-family: monospace;
+}
+
+div {
+    display: inline-block;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
