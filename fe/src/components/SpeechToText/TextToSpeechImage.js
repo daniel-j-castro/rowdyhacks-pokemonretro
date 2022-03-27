@@ -7,6 +7,8 @@ export default function TextToSpeechImage() {
     let [pokeAudio, setPokeAudio] = useState("");
     let [pokeSprite, setPokeSprite] = useState("");
     let [pokeName, setPokeName] = useState("");
+
+    var name = "";
     
     function setGameStates(){
         const pokeID = Math.floor(Math.random() * 890) + 1;
@@ -14,7 +16,8 @@ export default function TextToSpeechImage() {
 
         ///api stuff
 
-        const name = "bidoof";
+        name = "bidoof";
+
         const imageName = "bidoof";
         const soundName = "bidoof";
 
@@ -56,9 +59,13 @@ export default function TextToSpeechImage() {
     }
 
     function checkInput() {
-        console.log(pokeName);
-        const val = document.querySelector('input').value;
-        console.log(val);
+        console.log(name);
+        const inputVal = document.querySelector('input').value;
+        if (inputVal == name){
+            console.log("correct!");
+        }
+
+        else{console.log("wrong!")}
     }
 
     function gameplay(){
@@ -106,7 +113,7 @@ export default function TextToSpeechImage() {
         <div id="poke-input" className='poke-inputt'>
             <label>
             Name:
-            <input type="text" name="name" value="stuff" />
+            <input type="text" name="name"  />
             </label>
         </div> 
         
