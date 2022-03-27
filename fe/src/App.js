@@ -13,13 +13,23 @@ function App() {
 
   function handleKeystroke(event) {
     setUserInput(event.target.value);
+    if (userInput.length === targetName.length - 1 && event.target.value === targetName) {
+      setTimeout( () =>{
+        alert("Correct!");
+      }, 1)
+    }
+    else if(userInput.length === targetName.length - 1 && event.target.value != targetName) {
+      setTimeout( () =>{
+        alert("Wrong!");
+      }, 1)
+    }
   }
 
   function checkIfComplete(event) {
     if (event.keyCode === 13 && targetName === userInput) {
       alert("Correct!");
     }
-    else if (event.keyCode == 13 && targetName !== userInput) {
+    else if (event.keyCode === 13 && targetName !== userInput) {
       alert("Wrong");
     }
   }
