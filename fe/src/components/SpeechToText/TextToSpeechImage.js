@@ -6,6 +6,7 @@ export default function TextToSpeechImage() {
 
     let [pokeAudio, setPokeAudio] = useState("");
     let [pokeSprite, setPokeSprite] = useState("");
+    let [pokeName, setPokeName] = useState("");
     
     function setGameStates(){
         const pokeID = Math.floor(Math.random() * 890) + 1;
@@ -13,14 +14,18 @@ export default function TextToSpeechImage() {
 
         ///api stuff
 
-        const name = "snorlax";
+        const name = "bidoof";
+        const imageName = "bidoof";
+        const soundName = "bidoof";
 
-        const spriteURL = "https://projectpokemon.org/images/normal-sprite/" + name + ".gif";
-        const audioURL = "https://play.pokemonshowdown.com/audio/cries/" + name + ".mp3";
-        //https://play.pokemonshowdown.com/audio/cries/squirtle.mp3
+        const spriteURL = "https://projectpokemon.org/images/normal-sprite/" + imageName + ".gif";
+        const audioURL = "https://play.pokemonshowdown.com/audio/cries/" + soundName + ".mp3";
+        
 
         setPokeSprite(spriteURL);
         setPokeAudio(audioURL);
+        setPokeName(name);
+
     }
     
     function game (){
@@ -46,8 +51,14 @@ export default function TextToSpeechImage() {
         
 
         //
-        setTimeout(gameplay, 10000);
+        setTimeout(gameplay, 3000);
         
+    }
+
+    function checkInput() {
+        console.log(pokeName);
+        const val = document.querySelector('input').value;
+        console.log(val);
     }
 
     function gameplay(){
@@ -59,6 +70,8 @@ export default function TextToSpeechImage() {
         var spriteRevealed = document.getElementById("sprite-revealed");
         spriteRevealed.style.display = "block";
         document.getElementById('audio').play();
+
+        const correct = checkInput();
     }
 
     //Calls when window loads, after 3000 ms starts game
@@ -90,13 +103,13 @@ export default function TextToSpeechImage() {
             <img className="revealed" src={pokeSprite} width="px" height="250px" alt="filter applied" />
         </div>
 
-        <div id="poke-input" className='poke-input' hidden>
+        <div id="poke-input" className='poke-inputt'>
             <label>
             Name:
-            <input type="text" name="name" />
+            <input type="text" name="name" value="stuff" />
             </label>
         </div> 
-
+        
         <audio src={pokeAudio} id="audio" controls hidden>
         <source type="audio/mp3"></source>
         </audio>
