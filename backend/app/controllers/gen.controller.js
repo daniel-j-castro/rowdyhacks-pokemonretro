@@ -1,5 +1,7 @@
 const Gen = require('../models/gen.model.js');
 
+//May need to replace Gen with Generations dependant on collection
+
 // Retrieve and return all gens from the database.
 exports.findAll = (req, res) => {
     Gen.find()

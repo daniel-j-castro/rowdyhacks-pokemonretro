@@ -47,6 +47,7 @@ mongoose.connect(database_uri, {
     useUnifiedTopology: true
 }).then(() => {
     console.log("Successfully connected to the database");
+
 }).catch(err => {
     console.log('Could not connect to the database. Exiting now...\n', err);
     process.exit();
