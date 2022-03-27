@@ -25,37 +25,40 @@ def get_name(name):
 
 # %%
 # dataset 2 - used to get descriptions of pokemon
+
 # read pokedex2.xlsx to dataframe
 descriptions = pd.read_excel('pokedex2.xlsx')[0:890]
+
 # dataset 1 - main dataset
 all_pokemon = pd.read_csv('pokedex.csv')
-colnames = all_pokemon.columns.values
-game_col_names = colnames[0:3]
+colnames = all_pokemon.columns.values[0:3]
 
 # only use columns in game_col_names for all_pokemon
-all_pokemon = all_pokemon[game_col_names]
-all_pokemon['descriptions'] = descriptions[['descriptions']]
+all_pokemon = all_pokemon[colnames]
+all_pokemon['description'] = descriptions['description']
+colnames = all_pokemon.columns.values
+
 # get only unique pokedex numbers
 all_pokemon = all_pokemon.drop_duplicates(
     keep="first", subset='pokedex_number')
 all_pokemon.reset_index(drop=True, inplace=True)
 
 # combine all_pokemon and all_pokemon_2 where pokedex_number is the same
-colnames = all_pokemon.columns.values
-all_pokemon.reset_index()
-
 pokemon = all_pokemon[colnames]
-pokemon.reset_index()
+pokemon.reset_index(drop=True, inplace=True)
 
 pokemon = pokemon[['pokedex_number', 'generation', 'name', 'description']]
 pokemon['name'] = pokemon['name'].apply(get_name)
 
 audio_re = '[^A-z0-9]'
-image_re = '[^a-z0-9]|-'
+
+image_re = '[^A-z0-9]|-'
 
 
 pokemon['sound_name'] = pokemon['name'].replace(audio_re, '', regex=True)
-pokemon['image_name'] = pokemon['name'].replace(image_re, '', regex=True)
+
+pokemon['image_name'] = pokemon['name'].replace(image_re,
+                                                '', regex=True)
 
 
 # %%
