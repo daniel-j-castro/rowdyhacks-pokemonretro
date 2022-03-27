@@ -9,7 +9,7 @@ var SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarLi
 var SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent;
 
 var phrases = [
-  'I love to sing because it\'s fun',
+  'applin',
   'where are you going',
   'can I call you tomorrow',
   'why did you talk while I was talking',
@@ -48,7 +48,8 @@ var phrases = [
           // We then return the transcript property of the SpeechRecognitionAlternative object 
           var speechResult = event.results[0][0].transcript.toLowerCase();
         
-          console.log(speechResult)
+          console.log(phrase + " = " + speechResult)
+          console.log(speechResult == phrase)
       
           console.log('Confidence: ' + event.results[0][0].confidence);
         }
