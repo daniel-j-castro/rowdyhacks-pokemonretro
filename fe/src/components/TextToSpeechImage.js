@@ -14,7 +14,7 @@ export default function TextToSpeechImage() {
 
         ///api stuff
 
-        const name = "charizard";
+        const name = "snorlax";
 
         const spriteURL = "https://projectpokemon.org/images/normal-sprite/" + name + ".gif";
         const audioURL = "https://play.pokemonshowdown.com/audio/cries/" + name + ".mp3";
