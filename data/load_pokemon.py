@@ -35,12 +35,17 @@ colnames = all_pokemon.columns.values[0:3]
 
 # only use columns in game_col_names for all_pokemon
 all_pokemon = all_pokemon[colnames]
+
+all_pokemon.reset_index(drop=True, inplace=True)
+
 all_pokemon['description'] = descriptions['description']
+
 colnames = all_pokemon.columns.values
 
 # get only unique pokedex numbers
 all_pokemon = all_pokemon.drop_duplicates(
     keep="first", subset='pokedex_number')
+
 all_pokemon.reset_index(drop=True, inplace=True)
 
 # combine all_pokemon and all_pokemon_2 where pokedex_number is the same
@@ -48,6 +53,7 @@ pokemon = all_pokemon[colnames]
 pokemon.reset_index(drop=True, inplace=True)
 
 pokemon = pokemon[['pokedex_number', 'generation', 'name', 'description']]
+
 pokemon['name'] = pokemon['name'].apply(get_name)
 
 audio_re = '[^A-z0-9]'
