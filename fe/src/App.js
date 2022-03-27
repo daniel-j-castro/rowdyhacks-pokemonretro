@@ -72,19 +72,8 @@ function App() {
           <Route exact path="/SpeechToText" element={<SpeechToText/>}/>
           <Route exact path="/TypeRacer" element={<TypeRacer/>} />
         </Routes>
-<<<<<<< HEAD
     </Router> */}
     </>
-=======
-        <div>
-          <Demo />
-        </div>
-        <div>
-        <Cards />
-      </div>
-    </Router>
-
->>>>>>> bd3b22360126d2ec81a11bc3b1911650831fd6b1
   );
 }
 
