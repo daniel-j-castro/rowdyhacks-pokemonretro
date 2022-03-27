@@ -6,6 +6,7 @@ export default function TextToSpeechImage() {
 
     let [pokeAudio, setPokeAudio] = useState("");
     let [pokeSprite, setPokeSprite] = useState("");
+    let [pokeName, setPokeName] = useState("");
     
 
     var name = "";
@@ -27,6 +28,7 @@ export default function TextToSpeechImage() {
 
         setPokeSprite(spriteURL);
         setPokeAudio(audioURL);
+        setPokeName(name);
        
     }
     
@@ -130,10 +132,12 @@ export default function TextToSpeechImage() {
         </audio>
 
         <div id="correct" className='correct'>
+            <p>{pokeName}</p>
             <p>Correct!</p>
         </div>
 
         <div id="wrong" className='wrong'>
+            <p>{pokeName}</p>
             <p>Wrong!</p>
         </div>
 
