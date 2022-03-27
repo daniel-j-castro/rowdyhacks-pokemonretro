@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../components/TextToSpeechImage'
+import Image from '../components/SpeechToText/TextToSpeechImage'
 import './SpeechToText.css'
 
 const STTPage = () => {

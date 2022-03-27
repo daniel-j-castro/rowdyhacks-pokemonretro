@@ -1,6 +1,5 @@
 import React, { useState, useEffect }from 'react';
 import './TextToSpeechImage.css';
-import Sprite from './Sprite';
 import ReactAudioPlayer from 'react-audio-player';
 
 export default function TextToSpeechImage() {
