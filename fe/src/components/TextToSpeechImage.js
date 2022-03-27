@@ -34,6 +34,8 @@ export default function TextToSpeechImage() {
         var revealed = "https://projectpokemon.org/images/normal-sprite/" + name + ".gif";
         setPokeName(revealed);
 
+        document.getElementById('audio').play();
+
         var getReady = document.getElementById("get-ready");
         if (getReady.style.display === "none") {
             getReady.style.display = "block";
@@ -96,15 +98,15 @@ export default function TextToSpeechImage() {
             </label>
         </div>
 
-        <audio id="myAudio" src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3"></audio>
+        <audio id="audio" controls autoplay>
+        <source src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3" type="audio/mp3"></source>
+        </audio>
 
     
         <div hidden>
-            <ReactAudioPlayer
-            src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3"
-            //autoPlay
-            controls
-            />
+            <audio id="audio" controls autoplay>
+            <source src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3" type="audio/mp3"></source>
+            </audio>
         </div>
 
      
