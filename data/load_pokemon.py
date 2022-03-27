@@ -51,14 +51,21 @@ pokemon = pokemon[['pokedex_number', 'generation', 'name', 'description']]
 pokemon['name'] = pokemon['name'].apply(get_name)
 
 audio_re = '[^A-z0-9]'
+image_re = '[^A-z0-9-]'
 
-image_re = '[^A-z0-9]|-'
+
+pokemon['sound_name'] = pokemon['name'].replace(
+    audio_re, '', regex=True).str.lower()
+
+pokemon['image_name'] = pokemon['name'].replace(
+    image_re, '', regex=True).str.lower()
+
+# type null
 
 
-pokemon['sound_name'] = pokemon['name'].replace(audio_re, '', regex=True)
+pokemon.to_csv('pokemon_data.csv')
 
-pokemon['image_name'] = pokemon['name'].replace(image_re,
-                                                '', regex=True)
+# %%
 
 
 # %%
