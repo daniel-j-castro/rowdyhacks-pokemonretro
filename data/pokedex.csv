@@ -1021,8 +1021,6 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 885,Dreepy,8,0,0,0,Lingering Pokémon,2,Dragon,Ghost,0.5,2,3,Clear Body,Infiltrator,Cursed Body,270,28,60,30,40,30,82,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
 886,Drakloak,8,0,0,0,Caretaker Pokémon,2,Dragon,Ghost,1.4,11,3,Clear Body,Infiltrator,Cursed Body,410,68,80,50,60,50,102,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
 887,Dragapult,8,1,0,0,Stealth Pokémon,2,Dragon,Ghost,3,50,3,Clear Body,Infiltrator,Cursed Body,600,88,120,75,100,75,142,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
-888,Zacian Crowned Sword,8,0,1,0,Warrior Pokémon,2,Fairy,Steel,2.8,355,1,Intrepid Sword,,,720,92,170,115,80,115,148,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.5,0.25,0.5,1,0,0.5,1,0.5
-888,Zacian Hero of Many Battles,8,0,1,0,Warrior Pokémon,1,Fairy,,2.8,110,1,Intrepid Sword,,,670,92,130,115,80,115,138,1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1
-889,Zamazenta Crowned Shield,8,0,1,0,Warrior Pokémon,2,Fighting,Steel,2.9,785,1,Dauntless Shield,,,720,92,130,145,80,145,128,0.5,2,1,1,0.5,0.5,2,0,2,1,1,0.25,0.25,1,0.5,0.5,0.5,1
-889,Zamazenta Hero of Many Battles,8,0,1,0,Warrior Pokémon,1,Fighting,,2.9,210,1,Dauntless Shield,,,670,92,130,115,80,115,138,1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2
+888,Zacian,8,0,1,0,Warrior Pokémon,2,Fairy,Steel,2.8,355,1,Intrepid Sword,,,720,92,170,115,80,115,148,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.5,0.25,0.5,1,0,0.5,1,0.5
+889,Zamazenta,8,0,1,0,Warrior Pokémon,2,Fighting,Steel,2.9,785,1,Dauntless Shield,,,720,92,130,145,80,145,128,0.5,2,1,1,0.5,0.5,2,0,2,1,1,0.25,0.25,1,0.5,0.5,0.5,1
 890,Eternatus,8,0,1,0,Gigantic Pokémon,2,Poison,Dragon,20,950,1,Pressure,,,690,140,85,95,145,95,130,1,0.5,0.5,0.5,0.25,2,0.5,0.5,2,1,2,0.5,1,1,2,1,1,1
