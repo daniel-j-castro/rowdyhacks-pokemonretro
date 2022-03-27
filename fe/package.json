@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://retro-pokemon-game-api-k6cgale4bq-uc.a.run.app/pokemon/",
+  "proxy": "https://retro-pokemon-game-api-k6cgale4bq-uc.a.run.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
