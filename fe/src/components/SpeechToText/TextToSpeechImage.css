@@ -1,0 +1,30 @@
+.sprite-black{
+    display: none;
+}
+
+.sprite-revealed{
+    display: none;
+}
+
+.poke-input{
+    display: none;
+}
+
+.blackout {
+    filter:brightness(0%)
+}
+.revealed {
+    filter:brightness(100%)
+}
+
+.audio{
+    display: none;
+}
+
+.correct{
+    display: none;
+}
+
+.wrong{
+    display: none;
+}

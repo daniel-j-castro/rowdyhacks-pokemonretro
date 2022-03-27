@@ -1,39 +1,26 @@
 import React, { useState, useRef } from 'react';
-import NavBar from './NavBar.js';
-import Sprite from './Sprite.js'
-import charmander from './charmander.png';
-import CorrectnessField from './CorrectnessField.js';
+//import Sprite from './Sprite.js'
+import Sprite from '../components/TypeRace/Sprite'
+import charmander from '../components/TypeRace/charmander.png';
+import CorrectnessField from '../components/TypeRace/CorrectnessField';
 import {v4 as uuid} from "uuid";
 
-function App() {
+
+const TypeRace = () => {
   const targetName = "charmander"; 
 
   const [userInput, setUserInput] = useState("");
   const textField = useRef();
-  const [error, setError] = useState(0);
-
-  calcPoints
 
   function handleKeystroke(event) {
     setUserInput(event.target.value);
-    if (userInput.length === targetName.length - 1 && event.target.value === targetName) {
-      setTimeout( () =>{
-        alert("Correct!");
-      }, 1)
-    }
-    else if(userInput.length === targetName.length - 1 && event.target.value != targetName) {
-      setTimeout( () =>{
-        alert("Wrong!");
-      }, 1)
-    }
-
   }
 
   function checkIfComplete(event) {
     if (event.keyCode === 13 && targetName === userInput) {
       alert("Correct!");
     }
-    else if (event.keyCode === 13 && targetName !== userInput) {
+    else if (event.keyCode == 13 && targetName !== userInput) {
       alert("Wrong");
     }
   }
@@ -44,7 +31,6 @@ function App() {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap" rel="stylesheet"></link>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossOrigin="anonymous" />
-    <NavBar />
     <Sprite image={charmander} />
     <br />
     <div>{targetName}</div>
@@ -56,4 +42,4 @@ function App() {
   );
 }
 
-export default App;
+export default TypeRace;

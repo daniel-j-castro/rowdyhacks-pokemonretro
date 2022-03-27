@@ -21,5 +21,4 @@ export default function CorrectnessField({targetString, userString}) {
         }
         </>
     );
-    // user character: letter, correctness
 }
