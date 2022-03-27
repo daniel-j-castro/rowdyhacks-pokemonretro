@@ -63,7 +63,7 @@ pokemon['image_name'] = pokemon['name'].replace(
 # type null
 
 
-pokemon.to_csv('pokemon_data.csv', orient='records')
+pokemon.to_csv('pokemon_data.csv')
 pokemon.to_json('pokemon_data.json', orient='records')
 # %%
 
