@@ -16,3 +16,7 @@
 .revealed {
     filter:brightness(100%)
 }
+
+.audio{
+    display: none;
+}

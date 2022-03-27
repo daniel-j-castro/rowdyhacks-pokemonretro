@@ -1,38 +1,36 @@
 import React, { useState, useEffect }from 'react';
-import './TextToSpeechImage.css'
-import Sprite from './Sprite'
+import './TextToSpeechImage.css';
+import Sprite from './Sprite';
 import ReactAudioPlayer from 'react-audio-player';
 
 export default function TextToSpeechImage() {
 
+    let [pokeAudio, setPokeAudio] = useState("");
+    let [pokeSprite, setPokeSprite] = useState("");
     
-    const [pokeName, setPokeName] = useState("");
+    function setGameStates(){
+        const pokeID = Math.floor(Math.random() * 890) + 1;
 
-    function play_sound(){
-        return (
-            <>
-            <div hidden>
-            <ReactAudioPlayer
-            src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3"
-            autoPlay
-            controls
-            hidden
-            />
-        </div></>
-        )
+
+        ///api stuff
+
+        const name = "charizard";
+
+        const spriteURL = "https://projectpokemon.org/images/normal-sprite/" + name + ".gif";
+        const audioURL = "https://play.pokemonshowdown.com/audio/cries/" + name + ".mp3";
+        //https://play.pokemonshowdown.com/audio/cries/squirtle.mp3
+
+        setPokeSprite(spriteURL);
+        setPokeAudio(audioURL);
     }
-
-
+    
     function game (){
         
         console.log("GO!");
+    
+        setGameStates();
 
-        const pokeID = Math.floor(Math.random() * 890) + 1;
-
-        const name = "squirtle";
-
-        var revealed = "https://projectpokemon.org/images/normal-sprite/" + name + ".gif";
-        setPokeName(revealed);
+        console.log("xxxx" + pokeAudio)
 
         document.getElementById('audio').play();
 
@@ -46,8 +44,7 @@ export default function TextToSpeechImage() {
         var spriteBlack = document.getElementById("sprite-black");
         spriteBlack.style.display = "block";
 
-        var pokeInput = document.getElementById("poke-input");
-        pokeInput.style.display = "block";
+        
 
         //
         setTimeout(gameplay, 10000);
@@ -62,6 +59,7 @@ export default function TextToSpeechImage() {
 
         var spriteRevealed = document.getElementById("sprite-revealed");
         spriteRevealed.style.display = "block";
+        document.getElementById('audio').play();
     }
 
     //Calls when window loads, after 3000 ms starts game
@@ -83,33 +81,26 @@ export default function TextToSpeechImage() {
             <img src="https://t3.ftcdn.net/jpg/02/80/19/58/360_F_280195814_oCrOichHnAqlKbdhQwk1R661FTSUj71O.jpg" alt="Get Ready!"></img>
         </div>
 
+        
+
         <div id="sprite-black" className='sprite-black'>
-            <img className="blackout" src={pokeName} width="px" height="250px" alt="filter applied" />
+            <img className="blackout" src={pokeSprite} width="px" height="250px" alt="filter applied" />
         </div>
 
         <div id="sprite-revealed" className='sprite-revealed'>
-            <img className="revealed" src={pokeName} width="px" height="250px" alt="filter applied" />
+            <img className="revealed" src={pokeSprite} width="px" height="250px" alt="filter applied" />
         </div>
 
-        <div id="poke-input" className='poke-input'>
+        <div id="poke-input" className='poke-input' hidden>
             <label>
             Name:
             <input type="text" name="name" />
             </label>
         </div> 
 
-        <audio id="audio" controls autoplay>
-        <source src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3" type="audio/mp3"></source>
+        <audio src={pokeAudio} id="audio" controls hidden>
+        <source type="audio/mp3"></source>
         </audio>
-
-    
-        <div hidden>
-            <audio id="audio" controls autoplay>
-            <source src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3" type="audio/mp3"></source>
-            </audio>
-        </div>
-
-     
 
         
         </>
