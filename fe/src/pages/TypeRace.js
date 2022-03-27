@@ -1,13 +1,18 @@
 import React, { useState, useRef } from 'react';
 import Sprite from '../components/TypeRace/Sprite'
 import charmander from '../components/TypeRace/charmander.png';
+import bulbasaur from '../components/TypeRace/bulbasaur.png';
+import totodile from '../components/TypeRace/totodile.jpg';
+import smeargle from '../components/TypeRace/smeargle.png';
+import dunsparce from '../components/TypeRace/dunsparce.png';
 import CorrectnessField from '../components/TypeRace/CorrectnessField';
 import {v4 as uuid} from "uuid";
 
 
 function TypeRace() {
   // use AJAX/Axios to get random Pokemon names here
-  const targetNameArray = ["charmander", "bulbasaur", "totodile"];
+  const targetNameArray = ["charmander", "bulbasaur", "totodile", "smeargle", "dunsparce"];
+  const targetImageArray = [charmander, bulbasaur, totodile, smeargle, dunsparce];
 
   const [userInput, setUserInput] = useState("");
   const [userCount, setUserCount] = useState(0);
@@ -44,7 +49,7 @@ function TypeRace() {
 
   return (
       <>
-      <Sprite image={charmander} />
+      <Sprite image={targetImageArray[userCount]} />
       <br />
       {/* This will hold the target name the player needs to get */}
       <div>{targetNameArray[userCount]}</div>

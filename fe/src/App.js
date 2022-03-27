@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SpeechToText from './pages/SpeechToText';
+import SpeechToTextImage from './components/SpeechToText/TextToSpeechImage.js';
 import TypeRacer from './pages/TypeRace';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
@@ -58,7 +59,7 @@ function App() {
       siteState === 1 ? <TypeRacer /> : <></>
     }
     {
-      siteState === 2 ? <SpeechToText /> : <></>
+      siteState === 2 ? <SpeechToTextImage /> : <></>
     }
 
     {
