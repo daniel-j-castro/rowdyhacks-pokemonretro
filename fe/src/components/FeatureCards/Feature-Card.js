@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function FeatureCard({ cl, region, generation }) {
 
     return (<div className={cl}>
-        <div className="card-cover text-white rounded-5 shadow-lg">
+        <div className="card-cover text-white rounded-5 shadow-lg card_style">
             <div className="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                 <h2 className="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{region}</h2>
                 <ul className="d-flex list-unstyled mt-auto">

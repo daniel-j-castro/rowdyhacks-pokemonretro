@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SpeechToText from './pages/SpeechToText';
 import TypeRacer from './pages/TypeRace';
@@ -28,20 +28,52 @@ export default (page_name);
 
 //TODO Add navbar component below
 
-export default function App() {
+function App() {
+  const [siteState, setSiteState] = useState(0);
+
+  function changeToTypeRacer() {
+    setSiteState(1);
+  }
+
+  function changeToSpeech() {
+    setSiteState(2);
+  }
+
   return (
+    <>
+    <ul>
+        <li><button><a href="/">Home</a></button></li>
+        {
+          siteState === 0 ? (
+            <>
+            <li><button onClick={changeToSpeech}>Speech To Text Page</button></li>
+            <li><button onClick={changeToTypeRacer}>Type Racer</button></li>
+            </>
+          ) : <></>
+        }
+    </ul>
+
+    {
+      siteState === 1 ? <TypeRacer /> : <></>
+    }
+    {
+      siteState === 2 ? <SpeechToText /> : <></>
+    }
+
+    {
+      siteState === 0 ? <Cards /> : <></>
+    }
+
+    {/* <Cards />
     <Router>
-        <NavBar/>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/SpeechToText" element={<SpeechToText/>}/>
-          <Route exact path="/TypeRacer" element={<TypeRacer/>}/>
+          <Route exact path="/TypeRacer" element={<TypeRacer/>} />
         </Routes>
-        
-        <div>
-        <Cards />
-      </div>
-    </Router>
-
+    </Router> */}
+    </>
   );
 }
+
+export default App;

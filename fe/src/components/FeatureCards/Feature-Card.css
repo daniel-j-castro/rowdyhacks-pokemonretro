@@ -38,3 +38,7 @@
     background-image: url('../../../img/Galar.png');
     background-size: 100%;
 }
+
+.card_style {
+    cursor: pointer;
+}
