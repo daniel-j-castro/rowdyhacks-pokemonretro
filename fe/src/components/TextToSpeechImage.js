@@ -96,7 +96,7 @@ export default function TextToSpeechImage() {
             Name:
             <input type="text" name="name" />
             </label>
-        </div>
+        </div> 
 
         <audio id="audio" controls autoplay>
         <source src="https://play.pokemonshowdown.com/audio/cries/kakuna.mp3" type="audio/mp3"></source>
