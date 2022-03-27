@@ -40,6 +40,7 @@ export default function App() {
           <Route exact path="/SpeechToText" element={<SpeechToText/>}/>
           <Route exact path="/TypeRacer" element={<TypeRacer/>}/>
         </Routes>
+        
 
     </Router>
   );
