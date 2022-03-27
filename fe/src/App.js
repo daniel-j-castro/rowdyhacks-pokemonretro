@@ -18,14 +18,11 @@ Adding Pages
 /*
 import React from 'react';
 import './(page_name).css'
-
-
 const (page_name) = () => {
   return (
     <div>Your page content</div>
   );
 }
-
 export default (page_name);
 */
 
@@ -45,5 +42,3 @@ export default function App() {
     </Router>
   );
 }
-
-
