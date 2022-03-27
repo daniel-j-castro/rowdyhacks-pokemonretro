@@ -1,0 +1,6 @@
+.blackout {
+    filter:brightness(0%)
+}
+.revealed {
+    filter:brightness(100%)
+}

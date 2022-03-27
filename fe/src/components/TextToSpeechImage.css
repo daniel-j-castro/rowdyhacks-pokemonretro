@@ -1,0 +1,18 @@
+.sprite-black{
+    display: none;
+}
+
+.sprite-revealed{
+    display: none;
+}
+
+.poke-input{
+    display: none;
+}
+
+.blackout {
+    filter:brightness(0%)
+}
+.revealed {
+    filter:brightness(100%)
+}
