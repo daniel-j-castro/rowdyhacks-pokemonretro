@@ -10,6 +10,9 @@ function App() {
 
   const [userInput, setUserInput] = useState("");
   const textField = useRef();
+  const [error, setError] = useState(0);
+
+  calcPoints
 
   function handleKeystroke(event) {
     setUserInput(event.target.value);
@@ -23,6 +26,7 @@ function App() {
         alert("Wrong!");
       }, 1)
     }
+
   }
 
   function checkIfComplete(event) {
