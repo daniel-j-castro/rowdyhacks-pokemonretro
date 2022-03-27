@@ -42,10 +42,10 @@ export default function App() {
           <Route exact path="/TypeRacer" element={<TypeRacer/>}/>
         </Routes>
         <div>
-          <Demo />
+          {/* <Demo /> */}
         </div>
         <div>
-        <Cards />
+        {/* <Cards /> */}
       </div>
     </Router>
 

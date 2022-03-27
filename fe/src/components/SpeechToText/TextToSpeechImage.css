@@ -28,3 +28,15 @@
 .wrong{
     display: none;
 }
+
+.splash {
+    background-image: url('../../../img/WhosThatPokemonTemplateHD.jpg');
+    filter: brightness(120%);
+    width: 150%;
+    min-height: 377px;
+    max-width: 800px;
+    align-items: center;
+    -webkit-background-size: 100%;
+    -moz-background-size: fill;
+    -o-background-size: fill;
+}
