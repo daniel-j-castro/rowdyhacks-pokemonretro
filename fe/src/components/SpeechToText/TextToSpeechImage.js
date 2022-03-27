@@ -8,15 +8,19 @@ export default function TextToSpeechImage() {
     let [pokeSprite, setPokeSprite] = useState("");
     let [pokeName, setPokeName] = useState("");
     
+
+    var name = "";
+    
     function setGameStates(){
         const pokeID = Math.floor(Math.random() * 890) + 1;
 
 
         ///api stuff
 
-        const name = "bidoof";
-        const imageName = "bidoof";
-        const soundName = "bidoof";
+        name = "pikachu";
+
+        const imageName = "pikachu";
+        const soundName = "pikachu";
 
         const spriteURL = "https://projectpokemon.org/images/normal-sprite/" + imageName + ".gif";
         const audioURL = "https://play.pokemonshowdown.com/audio/cries/" + soundName + ".mp3";
@@ -25,7 +29,7 @@ export default function TextToSpeechImage() {
         setPokeSprite(spriteURL);
         setPokeAudio(audioURL);
         setPokeName(name);
-
+       
     }
     
     function game (){
@@ -33,8 +37,6 @@ export default function TextToSpeechImage() {
         console.log("GO!");
     
         setGameStates();
-
-        console.log("xxxx" + pokeAudio)
 
         document.getElementById('audio').play();
 
@@ -56,9 +58,13 @@ export default function TextToSpeechImage() {
     }
 
     function checkInput() {
-        console.log(pokeName);
-        const val = document.querySelector('input').value;
-        console.log(val);
+        console.log(name);
+        const inputVal = document.querySelector('input').value;
+        if (inputVal == name){
+           return true;
+        }
+
+        else{return false}
     }
 
     function gameplay(){
@@ -72,6 +78,17 @@ export default function TextToSpeechImage() {
         document.getElementById('audio').play();
 
         const correct = checkInput();
+
+        if(correct)
+        {
+            var correctDiv = document.getElementById("correct");
+            correctDiv.style.display = "block";
+        }
+        else {
+            var wrongDiv = document.getElementById("wrong");
+            wrongDiv.style.display = "block";
+        }
+
     }
 
     //Calls when window loads, after 3000 ms starts game
@@ -106,13 +123,23 @@ export default function TextToSpeechImage() {
         <div id="poke-input" className='poke-inputt'>
             <label>
             Name:
-            <input type="text" name="name" value="stuff" />
+            <input type="text" name="name"  />
             </label>
         </div> 
         
         <audio src={pokeAudio} id="audio" controls hidden>
         <source type="audio/mp3"></source>
         </audio>
+
+        <div id="correct" className='correct'>
+            <p>{pokeName}</p>
+            <p>Correct!</p>
+        </div>
+
+        <div id="wrong" className='wrong'>
+            <p>{pokeName}</p>
+            <p>Wrong!</p>
+        </div>
 
         
         </>

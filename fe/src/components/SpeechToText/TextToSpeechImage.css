@@ -20,3 +20,11 @@
 .audio{
     display: none;
 }
+
+.correct{
+    display: none;
+}
+
+.wrong{
+    display: none;
+}
