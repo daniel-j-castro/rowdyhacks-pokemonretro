@@ -1,0 +1,40 @@
+.kanto {
+    background-image: url('../../../img/Kanto.png');
+    background-size: 100%;
+  
+}
+
+.johto {
+    background-image: url('../../../img/Johto.png');
+    background-size: 100%;
+}
+.hoenn {
+    background-image: url('../../../img/Hoenn.png');
+    background-size: 100%;
+    
+}
+
+.sinnoh {
+    background-image: url('../../../img/Sinnoh.png');
+    background-size: 100%;
+}
+
+.unova {
+    background-image: url('../../../img/Unova.png');
+    background-size: 100%;
+}
+
+.alola {
+    background-image: url('../../../img/Alola.png');
+    background-size: 100%;
+}
+
+.kalos {
+    background-image: url('../../../img/Kalos.png');
+    background-size: 100%;
+}
+
+.galar {
+    background-image: url('../../../img/Galar.png');
+    background-size: 100%;
+}
