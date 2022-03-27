@@ -5,6 +5,7 @@ import TypeRacer from './pages/TypeRace';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
 import Cards from './components/FeatureCards/Cards.js';
+import Demo from './components/FeatureCards/Demo.js';
 /*
 Adding Pages
   * Add <page_name>.js and <page_name>.css to src/pages
@@ -71,8 +72,19 @@ function App() {
           <Route exact path="/SpeechToText" element={<SpeechToText/>}/>
           <Route exact path="/TypeRacer" element={<TypeRacer/>} />
         </Routes>
+<<<<<<< HEAD
     </Router> */}
     </>
+=======
+        <div>
+          <Demo />
+        </div>
+        <div>
+        <Cards />
+      </div>
+    </Router>
+
+>>>>>>> bd3b22360126d2ec81a11bc3b1911650831fd6b1
   );
 }
 

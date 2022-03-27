@@ -39,6 +39,26 @@
     background-size: 100%;
 }
 
+<<<<<<< HEAD
 .card_style {
     cursor: pointer;
+=======
+.splash {
+    background-image: url('../../../img/WhosThatPokemonTemplateHD.jpg');
+    filter: brightness(120%);
+    width: 150%;
+    min-height: 377px;
+    min-width: 530px;
+    align-items: center;
+    -webkit-background-size: 100%;
+    -moz-background-size: fill;
+    -o-background-size: fill;
+}
+
+.darken{
+    filter:brightness(0%);
+    /* height:  */
+    margin-left: 35px;
+    margin-top: 20px;
+>>>>>>> bd3b22360126d2ec81a11bc3b1911650831fd6b1
 }
