@@ -30,35 +30,28 @@ def get_name(name):
 descriptions = pd.read_excel('pokedex2.xlsx')[0:890]
 
 # dataset 1 - main dataset
-all_pokemon = pd.read_csv('pokedex.csv')
-colnames = all_pokemon.columns.values[0:3]
+pokemon = pd.read_csv('pokedex.csv')
 
-# only use columns in game_col_names for all_pokemon
-all_pokemon = all_pokemon[colnames]
-
-all_pokemon.reset_index(drop=True, inplace=True)
-
-all_pokemon['description'] = descriptions['description']
-
-colnames = all_pokemon.columns.values
+colnames = ['pokedex_number', 'generation', 'name']
+pokemon = pokemon[colnames]
 
 # get only unique pokedex numbers
-all_pokemon = all_pokemon.drop_duplicates(
+pokemon = pokemon.drop_duplicates(
     keep="first", subset='pokedex_number')
-
-all_pokemon.reset_index(drop=True, inplace=True)
-
-# combine all_pokemon and all_pokemon_2 where pokedex_number is the same
-pokemon = all_pokemon[colnames]
 pokemon.reset_index(drop=True, inplace=True)
 
-pokemon = pokemon[['pokedex_number', 'generation', 'name', 'description']]
+pokemon['description'] = descriptions['description']
+colnames.append('description')
+pokemon.reset_index(drop=True, inplace=True)
+
+# combine all_pokemon and all_pokemon_2 where pokedex_number is the same
+pokemon = pokemon[colnames]
+pokemon.reset_index(drop=True, inplace=True)
 
 pokemon['name'] = pokemon['name'].apply(get_name)
 
 audio_re = '[^A-z0-9]'
 image_re = '[^A-z0-9-]'
-
 
 pokemon['sound_name'] = pokemon['name'].replace(
     audio_re, '', regex=True).str.lower()
@@ -71,7 +64,6 @@ pokemon['image_name'] = pokemon['name'].replace(
 
 pokemon.to_csv('pokemon_data.csv')
 pokemon.to_json('pokemon_data.json', orient='records')
-# %%
 
 
 # %%
