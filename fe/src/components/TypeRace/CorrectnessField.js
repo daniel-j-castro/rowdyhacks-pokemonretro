@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Character from './Character.js';
+//import Character from '../components/TypeRace/Character.js';
 import {v4 as uuid} from "uuid";
 
 export default function CorrectnessField({targetString, userString}) {

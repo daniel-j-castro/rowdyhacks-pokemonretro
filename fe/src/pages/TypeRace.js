@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios';
 import Sprite from '../components/TypeRace/Sprite'
 import charmander from '../components/TypeRace/charmander.png';
 import bulbasaur from '../components/TypeRace/bulbasaur.png';
@@ -8,9 +9,44 @@ import dunsparce from '../components/TypeRace/dunsparce.png';
 import CorrectnessField from '../components/TypeRace/CorrectnessField';
 import {v4 as uuid} from "uuid";
 
+//const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+// export default function App() {
+//   const [post, setPost] = React.useState(null);
+
+//   React.useEffect(() => {
+//     axios.get(baseURL).then((response) => {
+//       setPost(response.data);
+//     });
+//   }, []);
+
+//   if (!post) return null;
+
+//   return (
+//     <div>
+//       <h1>{post.title}</h1>
+//       <p>{post.body}</p>
+//     </div>
+//   );
+// }
+
 
 function TypeRace() {
+
+    let baseURL = "https://retro-pokemon-game-api-k6cgale4bq-uc.a.run.app/pokemon/23";
+    //const newURL = baseURL += "1";
+    const [post, setPost] = React.useState(null);
+
+    React.useEffect(() => {
+            axios.get(baseURL).then((response) => {
+                console.log(response.data[0].name);
+            setPost(response.data);
+        });
+    }, []);
+
+
   // use AJAX/Axios to get random Pokemon names here
+  // hardcoded five pokemon here in the meantime
   const targetNameArray = ["charmander", "bulbasaur", "totodile", "smeargle", "dunsparce"];
   const targetImageArray = [charmander, bulbasaur, totodile, smeargle, dunsparce];
 
@@ -49,6 +85,7 @@ function TypeRace() {
 
   return (
       <>
+      <div></div>
       <Sprite image={targetImageArray[userCount]} />
       <br />
       {/* This will hold the target name the player needs to get */}
