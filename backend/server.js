@@ -1,41 +1,65 @@
 const express = require('express');
-const request = require('request');
+const mongoose = require('mongoose');
+//const cors = require('cors');
+const port = normalizePort(process.env.PORT || '10000');
 
-const app = express()
-const port = 5000
+const database_uri = "mongodb+srv://ariel:pokemon@seprojectcluster.ea5vl.mongodb.net/retro_pokemon_game?retryWrites=true&w=majority";
 
-function firstGen() {
-    return (Math.floor(Math.random()*152))
+mongoose.set('useFindAndModify', false);
+
+// create express app
+const app = express();
+//app.use(cors());
+
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
 }
 
+app.use(express.urlencoded({
+    extended: true
+}));
+
+app.use(express.json()) // To parse the incoming requests with JSON payloads
+
+// Require hotel routes
+require('./app/routes/user.routes.js')(app);
+// Configuring the database
+// const dbConfig = require('./config/database.config.js');
+
+
+mongoose.Promise = global.Promise;
+
+// Connecting to the database
+mongoose.connect(database_uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Successfully connected to the database");
+}).catch(err => {
+    console.log('Could not connect to the database. Exiting now...\n', err);
+    process.exit();
+});
+
+// simple route
 app.get('/', (req, res) => {
     res.json({
-        "message":"test"
+        "message": "Software Engineering Project"
     });
 });
 
-app.get('/getRandomPokemon', (req, res) =>{
-  request.get('https://pokeapi.co/api/v2/pokemon/' + firstGen(), function(error, response, body) {
-    if(!error && response.statusCode === 200) {
-        res.send(body);
-    }
-  })  
-})
-
-app.get('/getRandomPDEntry', (req, res) =>{
-    console.log('https://pokeapi.co/api/v2/pokemon-species/' + 1)
-    request.get('https://pokeapi.co/api/v2/pokemon-species/' + 1, function(error, response, body) {
-        if(!error && response.statusCode === 200) {
-            var parsedFlavorText = JSON.parse(body)['flavor_text_entries']
-            var validEntries = []
-            for(text in parsedFlavorText){
-                if(parsedFlavorText[text]['language']['name'] == 'en') {
-                    validEntries.push(parsedFlavorText[text]['flavor_text'].replace(/(\r\n|\n|\r|\f)/gm, " "))
-                }
-            }
-            res.send(validEntries[Math.floor(Math.random() * validEntries.length)]);
-        }
-    })
-})
-
-app.listen(port, () => console.log(`listening on port ${port}`));
+// listen for requests
+app.listen(port, () => {
+    console.log("Server is listening on port: " + port);
+});
