@@ -4,7 +4,7 @@ import SpeechToText from './pages/SpeechToText';
 import TypeRacer from './pages/TypeRace';
 import Home from './pages/Home';
 import NavBar from './components/NavBar';
-
+import Cards from './components/FeatureCards/Cards.js';
 /*
 Adding Pages
   * Add <page_name>.js and <page_name>.css to src/pages
@@ -41,8 +41,11 @@ export default function App() {
           <Route exact path="/TypeRacer" element={<TypeRacer/>}/>
         </Routes>
         
-
+        <div>
+        <Cards />
+      </div>
     </Router>
+
   );
 }
 

@@ -200,10 +200,10 @@ var SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeec
         <>
         <div id="get-ready">
             <ul>
-                <li>Instructions</li>
-                <li>Instructions</li>
-                <li>Instructions</li>
-                <li>Instructions</li>
+                <li>An unidentified pokemon has appeared!</li>
+                <li>After hearing it's cry, try to guess Who's That Pokemon!'</li>
+                <li>Don't take too long, you have 10 seconds to guess, make sure your answer is super effective!</li>
+                <li>Good luck!</li>
             </ul>
             <img src="https://t3.ftcdn.net/jpg/02/80/19/58/360_F_280195814_oCrOichHnAqlKbdhQwk1R661FTSUj71O.jpg" alt="Get Ready!"></img>
         </div>
